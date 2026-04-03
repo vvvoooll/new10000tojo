@@ -185,34 +185,15 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   ttq.load('D77S7IJC77U58B5BAD9G');
   ttq.page();
 }(window, document, 'ttq');
-
-// LP到達時にViewContent発火
-window.addEventListener(‘DOMContentLoaded’, function() {
-ttq.track(‘ViewContent’);
-});
-
-// 50%スクロールでContact発火（LP読んでる=興味ある層の計測）
-var scrollFired = false;
-window.addEventListener(‘scroll’, function() {
-if (scrollFired) return;
-var scrollPercent = (window.scrollY + window.innerHeight) / document.body.scrollHeight * 100;
-if (scrollPercent >= 50) {
-ttq.track(‘Contact’);
-scrollFired = true;
-}
-});
-
-// ボタンクリック
 function trackAndRedirect(e) {
-e.preventDefault();
-ttq.track(‘ClickButton’);
-ttq.track(‘CompleteRegistration’);
-setTimeout(function(){
-window.location.href = ‘https://lin.ee/PQyMyvn’;
-}, 500);
+  e.preventDefault();
+  ttq.track('CompleteRegistration');
+  ttq.track('ClickButton');
+  setTimeout(function(){
+    window.location.href = 'https://lin.ee/PQyMyvn';
+  }, 500);
 }
 </script>
-
 </head>
 <body>
 <div class="container">
